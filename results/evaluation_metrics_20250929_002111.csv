@@ -1,0 +1,8 @@
+metric_type,metric_name,prefix,score
+Classification,Accuracy,A,0.62
+Classification,Macro F1,A,0.38271604938271603
+Text Generation,BLEU,B,0.0351384552443265
+Text Generation,METEOR,B,0.3108162579303899
+Text Generation,ROUGE-1,B,0.2857925943920149
+Text Generation,ROUGE-2,B,0.08136851125481938
+Text Generation,ROUGE-L,B,0.17873145516226444
