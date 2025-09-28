@@ -12,7 +12,7 @@ PROMPT_CSV_PATH = "prompts/multi-language-questions-set.csv"
 RESULTS_DIR = "results"
 RAW_RESULTS_PATH = os.path.join(RESULTS_DIR, "raw_predictions.csv")
 SUMMARY_REPORT_PATH = os.path.join(RESULTS_DIR, "summary_report.txt")
-FILTER_PROMPT = "Instruction: Keep answers precise and respond in words rather than sentences. Return just the answer when possible. Answer in the same language the question was asked unless specified otherwise. "
+FILTER_PROMPT = "Instruction: Keep answers precise and respond in words rather than sentences. Return just the answer when possible. Answer in the same language the question was asked. "
 
 
 os.makedirs(RESULTS_DIR, exist_ok=True)
