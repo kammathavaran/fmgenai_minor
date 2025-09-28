@@ -2,9 +2,9 @@ id,condition,prompt,gold,prediction,correct,fluency,error_type,f1
 1,L1,"In ""3 Idiots"", which college is shown as the main setting?",Imperial College of Engineering (based on IIT),IIT Powai,0,1,Misinterpretation,0.0
 1,L2,"""3 इडियट्स"" में मुख्य कॉलेज कौन सा दिखाया गया है?",इम्पीरियल कॉलेज ऑफ़ इंजीनियरिंग,IIT Bombay,0,1,Misinterpretation,0.0
 1,L3,3 Idiots mein main college kaunsa dikhaya gaya hai?,इम्पीरियल कॉलेज ऑफ़ इंजीनियरिंग,Rancho,0,1,Misinterpretation,0.0
-1,CS,"In ""3 इडियट्स” whats the name of the college ?",Imperial College of Engineering (based on IIT),Response: IIT Bombay,0,3,Misinterpretation,0.0
+1,CS,"In ""3 इडियट्स” whats the name of the college ?",Imperial College of Engineering (based on IIT),Response: IIT Bombay.,0,3,Misinterpretation,0.0
 2,L1,"Who played the character ""Simran"" in ""Dilwale Dulhania Le Jayenge""?",Kajol,Sridevi,0,1,Misinterpretation,0.0
-2,L2,"""दिलवाले दुल्हनिया ले जायेंगे"" में सिमरन का किरदार किसने निभाया है?",काजोल,Kareena Kapoor Khan.,0,3,Misinterpretation,0.0
+2,L2,"""दिलवाले दुल्हनिया ले जायेंगे"" में सिमरन का किरदार किसने निभाया है?",काजोल,Kareena Kapoor.,0,1,Misinterpretation,0.0
 2,L3,DDLJ mein Simran ka role kisne kiya hai?,काजोल,Kareena Kapoor Khan,0,3,Misinterpretation,0.0
 2,CS,DDLJ में सिमरन का किरदार किसने निभाया है?,काजोल,Aamir Khan,0,1,Misinterpretation,0.0
 3,L1,In which state is the Kanyakumari cape located?,Tamil Nadu,Tamil Nadu,1,1,None,1.0
@@ -12,44 +12,41 @@ id,condition,prompt,gold,prediction,correct,fluency,error_type,f1
 3,L3,Kanyakumari cape kaunsa state mein hai?,तमिलनाडु,"Kanyakumari cape is located in Tamil Nadu state, India.",0,5,Misinterpretation,0.0
 3,CS,In which state is the Kanyakumari cape located? हिंदी में उत्तर दें,तमिलनाडु,Tamil Nadu,0,1,Misinterpretation,0.0
 4,L1,"If a train leaves Delhi at 10am and reaches Chandigarh at 12pm, how much time did it take?",2 hours,2 hours,1,1,None,1.0
-4,L2,"अगर दिल्ली से ट्रेन 10 बजे छूटती है और चंडीगढ़ 12 बजे पहुँचती है, तो कितना समय लगा?",2 घंटे,"s
+4,L2,"अगर दिल्ली से ट्रेन 10 बजे छूटती है और चंडीगढ़ 12 बजे पहुँचती है, तो कितना समय लगा?",2 घंटे,"sambandh kitna hota hai?
 
-### Explanation:
-Explanation: The time difference between Delhi and Chandigarh is 2 hours. So, if the train leaves Delhi at 10 AM, it will reach Chandigarh at 12 PM.",0,5,Misinterpretation,0.0625
-4,L3,"Delhi se train 10 baje nikali aur Chandigarh 12 baje pahuncha, kitna time laga?",2 घंटे,1 hour,0,1,Misinterpretation,0.0
+Note: sambandh means connection in Hindi.",0,5,Misinterpretation,0.0
+4,L3,"Delhi se train 10 baje nikali aur Chandigarh 12 baje pahuncha, kitna time laga?",2 घंटे,2 hours,0,1,Misinterpretation,0.5
 4,CS,"अगर दिल्ली से ट्रेन 10 बजे छूटती है और चंडीगढ़ 12 बजे पहुँचती है, तो कितना समय लगा? Write answer in English",2 hours,2 hours.,0,1,Terminology drift,0.5
 5,L1,"""Lagaan"" depicts which sport as central to the plot?",Cricket,Cricket,1,1,None,1.0
-5,L2,"""लगान"" फिल्म की कथा में कौन सा खेल मुख्य है?",क्रिकेट,"The main game in the movie ""Lagaan"" is cricket.",0,5,Misinterpretation,0.0
+5,L2,"""लगान"" फिल्म की कथा में कौन सा खेल मुख्य है?",क्रिकेट,मुख्य खेल लगान फिल्म की कथा में है जब वह संत्रां के साथ खेल करता है.,0,5,Misinterpretation,0.0
 5,L3,Lagaan movie mein kaunsa sport main hai?,क्रिकेट,Cricket,0,1,Misinterpretation,0.0
 5,CS,"""Lagaan"" movie में central sport कौन सा है? (उत्तर हिंदी में)",क्रिकेट,Cricket,0,1,Misinterpretation,0.0
 6,L1,Where is the Jaisalmer Golden Fort located?,Rajasthan,"Jaisalmer, Rajasthan, India",0,3,Other,0.0
 6,L2,जैसलमेर का गोल्डन किला कहाँ स्थित है?,राजस्थान,"Golden Fort, Jaisalmer is located in the city of Jaisalmer, Rajasthan, India.",0,5,Misinterpretation,0.0
-6,L3,Jaisalmer Golden Fort kahan hai?,राजस्थान,"Jaisalmer Golden Fort kahan hai?
-
-Answer: Rajasthan mein hai.",0,5,Misinterpretation,0.0
+6,L3,Jaisalmer Golden Fort kahan hai?,राजस्थान,Response: Rajasthan mein hai.,0,3,Misinterpretation,0.0
 6,CS,Where is the Jaisalmer Golden Fort located? (Answer in Hindi),राजस्थान,जैसलमेर गोल्डन फोर्ट राजस्थान के जैसलमेर शहर में स्थित है।,0,3,Misinterpretation,0.18181818181818182
 5,L1,What is the square root of 49?,7,7,1,1,None,1.0
 5,L2,49 का वर्गमूल क्या है?,7,49 का वर्गमूल निज और संख्या नहीं है.,0,5,Misinterpretation,0.0
-5,L3,49 ka square root kya hai?,7,Response: 7,0,1,Misinterpretation,0.6666666666666666
+5,L3,49 ka square root kya hai?,7,Response: 7.,0,1,Misinterpretation,0.0
 5,CS,What is the वर्गमूल of 49?,7,Response: 7,0,1,Misinterpretation,0.6666666666666666
 8,L1,"In the movie ""Queen"", which city does Rani visit first?",Paris,Paris,1,1,None,1.0
 8,L2,"""क्वीन"" फिल्म में रानी सबसे पहले किस शहर जाती है?",पेरिस,Response: लंदन.,0,1,Misinterpretation,0.0
-8,L3,Queen film mein Rani sabse pehle kaunsi city visit karti hai?,पेरिस,Rani visits Mumbai first.,0,3,Misinterpretation,0.0
+8,L3,Queen film mein Rani sabse pehle kaunsi city visit karti hai?,पेरिस,Mumbai,0,1,Misinterpretation,0.0
 8,CS,"""Queen"" movie में Rani सबसे पहले किस city जाती है? (Answer in Hindi)
 ",पेरिस,"Rani सबसे पहले किस city जाती है?
 मुंबई",0,3,Misinterpretation,0.0
 12,L1,"If you eat a healthy breakfast, how does it help you?",Provides energy/Improves concentration,It gives me energy for the day.,0,5,Misinterpretation,0.0
 12,L2,अगर आप पौष्टिक नाश्ता करते हैं तो यह किस प्रकार मदद करता है?,"ऊर्जा देता है, सेहत के लिए अच्छा है","आप पौष्टिक नाश्ता करते हैं तो यह किस प्रकार मदद करता है?
 
-उतनी मदद नहीं करता.",0,5,Misinterpretation,0.0
+उतना प्रकार नहीं करता.",0,5,Misinterpretation,0.0
 12,L3,Healthy breakfast kaise madad karta hai?,"ऊर्जा देता है, सेहत के लिए अच्छा है","A healthy breakfast provides energy for daily activities, helps maintain a healthy weight, improves concentration and focus, supports heart health, and can lower the risk of chronic diseases like diabetes and certain cancers.",0,5,Misinterpretation,0.0
-12,CS,"If you eat a healthy breakfast, how does it help you? (उत्तर Hindi में)",ऊर्जा प्रदान करता है/एकाग्रता में सुधार करता है,Breakfast helps improve concentration and focus throughout the day.,0,5,Misinterpretation,0.0
+12,CS,"If you eat a healthy breakfast, how does it help you? (उत्तर Hindi में)",ऊर्जा प्रदान करता है/एकाग्रता में सुधार करता है,Breakfast helps improve concentration and productivity throughout the day.,0,5,Misinterpretation,0.0
 10,L1,The Puri Rath Yatra is held in which state?,Odisha,Odisha,1,1,None,1.0
 10,L2,पुरी रथ यात्रा किस राज्य में होती है?,ओडिशा,Uttar Pradesh,0,1,Misinterpretation,0.0
 10,L3,Puri Rath Yatra kaunsa state mein hai?,ओडिशा,Uttar Pradesh,0,1,Misinterpretation,0.0
-10,CS,Puri Rath Yatra किस state में होती है? (Answer in English),Odisha,"Puri Rath Yatra takes place in Odisha, India.",0,5,Misinterpretation,0.0
+10,CS,Puri Rath Yatra किस state में होती है? (Answer in English),Odisha,Odisha,1,1,None,1.0
 11,L1,In which state is the Dudhsagar Waterfall located?,Goa,Response: Goa,0,1,Misinterpretation,0.6666666666666666
-11,L2,दूधसागर जलप्रपात किस राज्य में है?,गोवा,Maharashtra,0,1,Misinterpretation,0.0
+11,L2,दूधसागर जलप्रपात किस राज्य में है?,गोवा,महाराष्ट्र,0,1,Misinterpretation,0.0
 11,L3,Dudhsagar waterfall kaunsa state mein hai?,गोवा,"Dudhsagar waterfall is located in the state of Goa, India.",0,5,Misinterpretation,0.0
 11,CS,Dudhsagar waterfall is in which state? (उत्तर हिंदी में),गोवा,Goa,0,1,Misinterpretation,0.0
 20,L1,Give a brief instruction for sending an email.,"Open mail, compose, type, send.","To send an email, follow these steps:
@@ -66,10 +63,11 @@ Answer: Rajasthan mein hai.",0,5,Misinterpretation,0.0
 Step-by-step process for sending an email:
 
 1. Compose a new email.
-2. Enter the recipient's email address in the ""To"" field.
-3. Write a subject line that summarizes the purpose of the email.
-4. Type your message in the main body of the email.
-5. Add any attachments,",0,3,Misinterpretation,0.0
+2. Enter the recipient's email address.
+3. Write a subject line.
+4. Write the email body.
+5. Add attachments (if needed).
+6. Click the ""Send"" button.",0,5,Misinterpretation,0.0
 20,L3,Email bhejne ki brief procedure batao.,"मेल ऐप खोलें, नया मेल लिखें, पता डालें, भेजें","Brief procedure for email writing:
 
 1. Write a clear and concise subject line.
@@ -80,14 +78,15 @@ Step-by-step process for sending an email:
 6. Include a clear call-to-action or request.
 7. End with a professional closing, such as ""Sincerely"" or ""Best regards.""
 8. Proof",0,3,Misinterpretation,0.0
-20,CS,Briefly tell how to send an email. (उत्तर Hindi में),"मेल खोलें, लिखें, टाइप करें, भेजें।","Open your email client, such as Gmail or Outlook. Type the recipient's email address in the ""To"" field and write a subject line. Write your message in the main body of the email and click the ""Send"" button.",0,5,Misinterpretation,0.0
+20,CS,Briefly tell how to send an email. (उत्तर Hindi में),"मेल खोलें, लिखें, टाइप करें, भेजें।","1. आपको एक ई-मेल भेजना है, तो सबसे पहले आपको ई-मेल कlient का उपयोग करना होगा।
+2. फिर आपको एक नया ई-मेल बनाना होगा, ज",0,3,Misinterpretation,0.0
 13,L1,The “Jallikattu” is a famous traditional event in which state?,Tamil Nadu,Tamil Nadu,1,1,None,1.0
 13,L2,"""जल्लिकट्टु"" किस राज्य का प्रसिद्ध पारंपरिक आयोजन है?",तमिलनाडु,Response: उत्तर प्रदेश.,0,3,Misinterpretation,0.0
 13,L3,Jallikattu event kaunsa state ka hai?,तमिलनाडु,Tamil Nadu,0,1,Misinterpretation,0.0
 13,CS,"""जल्लिकट्टु"" इवेंट किस राज्य में बोहत फेमस है? (Answer in English)",Tamil Nadu,Rajasthan.,0,1,Misinterpretation,0.0
 14,L1,"Where in India is the ancient Sun Temple located, famous for its chariot-shaped structure?","Konark, Odisha","Konark, Odisha",1,1,None,1.0
 14,L2,"भारत में प्राचीन सूर्य मंदिर, जो रथ जैसी आकृति के लिए प्रसिद्ध है, कहाँ है?","कोणार्क, ओडिशा","Konark Sun Temple, Odisha.",0,3,Misinterpretation,0.0
-14,L3,"Sun Temple, chariot shape, kaunsa jagah par hai?","कोणार्क, ओडिशा","Konark Sun Temple is located at Konark, Odisha.",0,5,Misinterpretation,0.0
+14,L3,"Sun Temple, chariot shape, kaunsa jagah par hai?","कोणार्क, ओडिशा","Konark Sun Temple, Odisha, India.",0,3,Misinterpretation,0.0
 14,CS,"Where in India is the ancient सूर्य मंदिर,, famous for its chariot shape?","Konark, Odisha","Konark, Odisha",1,1,None,1.0
 15,L1,"Which Bollywood movie features the character ""Babu Bhaiya""?",Hera Pheri,Response: Munna Bhai M.B.B.S.,0,3,Misinterpretation,0.0
 15,L2,"किस बॉलीवुड फिल्म में ""बाबू भाईया"" का किरदार है?",हेरा फेरी,Response: आमिर खान.,0,3,Misinterpretation,0.0
@@ -100,17 +99,19 @@ Step-by-step process for sending an email:
 * भारत के मिसाइल मैन किसे कहते हैं?
 
 Note: "" Bhārat ke misā'",0,3,Misinterpretation,0.0
-8,L3,Missile Man of India kisko kehte hain?,डॉ. ए.पी.जे. अब्दुल कलाम,Response: इंडिया का मिसाइल मेन.,0,3,Misinterpretation,0.0
+8,L3,Missile Man of India kisko kehte hain?,डॉ. ए.पी.जे. अब्दुल कलाम,Response:  Missile Man of India ko APJ Abdul Kalam kehte hain.,0,5,Misinterpretation,0.0
 8,CS,"Who is called the ""Missile Man of India""? (Answer in Hindi)",डॉ. ए.पी.जे. अब्दुल कलाम,"इंडिया के मिसाइल मैन कौन हैं?  
 
 (Answer in Hindi)
 
 Dr. अपजीत कांटा 
 
-Note: Dr. Apjit Kanta is known as the ""Missile Man of India"" for his contributions to the development of India's missile technology.",0,5,Misinterpretation,0.0
-17,L1,"In ""Andaz Apna Apna"", who is ""Crime Master Gogo""?",Shakti Kapoor,Response: Shakti Kapoor.,0,3,Terminology drift,0.4
-17,L2,"""अंदाज़ अपना अपना"" में 'क्राइम मास्टर गोगो' कौन है?",शक्ति कपूर,Gogo.,0,1,Misinterpretation,0.0
-17,L3,Andaz Apna Apna mein Crime Master Gogo kaun hai?,शक्ति कपूर,"Response: Crime Master Gogo is a character from the movie ""Andaz Apna Apna.""",0,3,Misinterpretation,0.0
+Note: Dr. Apjit Kant is known as the ""Missile Man of India"" for his contributions to the development of India's missile technology.",0,5,Misinterpretation,0.0
+17,L1,"In ""Andaz Apna Apna"", who is ""Crime Master Gogo""?",Shakti Kapoor,"Response: Crime Master Gogo is a character played by Shakti Kapoor in the movie ""Andaz Apna Apna"".",0,5,Misinterpretation,0.21052631578947367
+17,L2,"""अंदाज़ अपना अपना"" में 'क्राइम मास्टर गोगो' कौन है?",शक्ति कपूर,क्राइम मास्टर गोगो - अजीत सिंह.,0,5,Misinterpretation,0.0
+17,L3,Andaz Apna Apna mein Crime Master Gogo kaun hai?,शक्ति कपूर,"Response: Crime Master Gogo kaun hai?
+
+* Mithun Chakraborty",0,3,Misinterpretation,0.0
 17,CS,"""Andaz Apna Apna"" में Crime Master Gogo कौन है? (Answer in English)
 ",Shakti Kapoor,"Crime Master Gogo is played by actor Paresh Rawal in the movie ""Andaz Apna Apna.""",0,3,Misinterpretation,0.0
 18,L1,"Where in India is the Vembanad Lake, the longest lake in the country, located?",Kerala,Kerala.,0,1,Other,0.0
@@ -118,8 +119,10 @@ Note: Dr. Apjit Kanta is known as the ""Missile Man of India"" for his contribut
 18,L3,"Vembanad lake, sabse lambi jheel, kaunsa state mein hai?",केरल,Kerala.,0,1,Misinterpretation,0.0
 18,CS,"इंडिया की सबसे लंबी झील, वेम्बनाड झील, कहाँ है? (Answer in English)",Kerala,"Vembanad Lake, Kerala.",0,3,Misinterpretation,0.0
 9,L1,Reason: Why do we see our reflection in a mirror?,Light bounces off surface (reflection),"Response: Light bounces off the mirror's smooth surface, reflecting our image.",0,5,Terminology drift,0.37499999999999994
-9,L2,कारण बताएं: हम आइने में अपना प्रतिबिम्ब क्यों देखते हैं?,प्रकाश परावर्तित होता है,"Response: आइने में प्रतिबिम्ब देखना स्वादः का समय है, जहाँ स्वादः का आधार निर्भर होता है और प्रतिबिम्ब का संचालन किया जाता ह",0,3,Misinterpretation,0.14814814814814817
-9,L3,Mirror mein reflection kyun dikhta hai?,प्रकाश परावर्तित होता है,Response: Kyunki main bhi khud ko dekhta hoon.,0,5,Misinterpretation,0.0
+9,L2,कारण बताएं: हम आइने में अपना प्रतिबिम्ब क्यों देखते हैं?,प्रकाश परावर्तित होता है,"कारण बताएं: आइने में अपना प्रतिबिम्ब क्यों देखते हैं?
+
+1. सुविधा के लिए: आइने में अपना प्रतिबिम्ब देखना सुविधा के लि",0,3,Misinterpretation,0.0
+9,L3,Mirror mein reflection kyun dikhta hai?,प्रकाश परावर्तित होता है,Response: Kyunki woh aapka dil dekhta hai.,0,5,Misinterpretation,0.0
 9,CS,Why do we see our reflection in a mirror? (उत्तर हिंदी में),प्रकाश सतह से टकराता है (परावर्तन),आधार का प्रतिबिम्ब है।,0,3,Misinterpretation,0.0
 20,L1,In which state is the Valley of Flowers National Park located?,Uttarakhand,Uttarakhand,1,1,None,1.0
 20,L2,वैली ऑफ फ्लावर्स नेशनल पार्क किस राज्य में स्थित है?,उत्तराखंड,Uttarakhand.,0,1,Misinterpretation,0.0
