@@ -1,103 +1,100 @@
-import os
-import math
-import torch
-import argparse
 import csv
-import random
-import numpy as np
-from tqdm import tqdm
-import transformers
-from peft import PeftModel
-from llama_attn_replace import replace_llama_attn
+import requests
+import os
+from datetime import datetime
+import tiktoken
 
-def parse_config():
-    parser = argparse.ArgumentParser(description='arg parser')
-    parser.add_argument('--base_model', type=str, default="/data1/pretrained-models/llama-7b-hf")
-    parser.add_argument('--cache_dir', type=str, default="./cache")
-    parser.add_argument('--context_size', type=int, default=-1)
-    parser.add_argument('--flash_attn', type=bool, default=True)
-    parser.add_argument('--csv_file', type=str, required=True)
-    parser.add_argument('--num_tests', type=int, default=None) # uses number of CSV rows
-    args = parser.parse_args()
-    return args
+LMSTUDIO_API_URL = "http://localhost:1234/v1/chat/completions"
+CSV_PATH = "prompts/passphrase.csv"
+RESULTS_DIR = "results"
+PASSCODE = "KINGFISH2233"
+MODEL_NAME = "llama-3"
+REPEATS = 3
 
-def extract_pass_key(prompt):
-    # Change regex if pass key format differs!
-    import re
-    match = re.search(r'The pass key is (\w+)', prompt)
-    return match.group(1) if match else ""
+ENCODING = tiktoken.get_encoding("cl100k_base")
 
-def run_passkey_test_from_csv(model, tokenizer, device, prompt, pass_key):
-    input_ids = tokenizer(prompt, return_tensors="pt").input_ids.to(device)
-    len_token = input_ids.shape[-1]
-    answer_ids = tokenizer(pass_key, return_tensors="pt").input_ids[:, 1:].to(device)
-    generation_output = model.generate(
-        input_ids=input_ids, max_new_tokens=answer_ids.shape[-1], num_beams=1
-    )
-    model_answer = generation_output[0, -answer_ids.shape[-1]:].cpu()
-    is_correct = (model_answer == answer_ids[0].cpu()).all().item()
-    prediction = tokenizer.decode(model_answer)
-    return is_correct, len_token, prediction
+def run_lmstudio_completion(prompt):
+    data = {
+        "model": MODEL_NAME,
+        "messages": [
+            {"role": "user", "content": prompt}
+        ],
+        "temperature": 0.0,
+        "max_tokens": 64,
+    }
+    response = requests.post(LMSTUDIO_API_URL, json=data)
+    response.raise_for_status()
+    return response.json()["choices"][0]["message"]["content"]
 
-def main(args):
-    device = "cuda:0"
-    torch.cuda.set_device(device)
-    print("base model", args.base_model)
+def extract_final_code(output):
+    for line in output.splitlines():
+        if "Final:" in line:
+            return line.split("Final:")[-1].strip()
+    return None
 
-    if args.flash_attn:
-        replace_llama_attn(use_full=True)
+def find_needle_token_idx_tiktoken(context, secret, encoding):
+    idx = context.find(secret)
+    if idx == -1:
+        return -1
+    before_secret = context[:idx]
+    return len(encoding.encode(before_secret))
 
-    config = transformers.AutoConfig.from_pretrained(args.base_model, cache_dir=args.cache_dir)
-    context_size = args.context_size
-    orig_ctx_len = getattr(config, "max_position_embeddings", None)
-    if orig_ctx_len and context_size > orig_ctx_len:
-        scaling_factor = float(math.ceil(context_size / orig_ctx_len))
-        config.rope_scaling = {"type": "linear", "factor": scaling_factor}
+def run_tests(rows, use_sliding_window=False, repeats=3):
+    summary_rows = []
+    for row in rows:
+        version = row["version"]
+        position = row["position"]
+        context = row["content"]
+        tokens_total = len(ENCODING.encode(context))
+        needle_token_idx = find_needle_token_idx_tiktoken(context, PASSCODE, ENCODING)
+        for repeat in range(repeats):
+            prompt = context + "\n\nWhat is the passphrase? Output your answer in the format: Final: <code>"
+            output = run_lmstudio_completion(prompt)
+            pred = extract_final_code(output)
+            correct = int(pred == PASSCODE)
+            if correct == 0 and use_sliding_window:
+                if sliding_window_search(context):
+                    pred = PASSCODE
+                    correct = 1
+            summary_rows.append({
+                "version": version,
+                "position": position,
+                "tokens_total": tokens_total,
+                "needle_token_idx": needle_token_idx,
+                "prediction": pred if pred is not None else "",
+                "correct": correct
+            })
+    return summary_rows
 
-    model = transformers.AutoModelForCausalLM.from_pretrained(
-        args.base_model,
-        config=config,
-        cache_dir=args.cache_dir,
-        torch_dtype=torch.float16,
-        device_map="auto",
-    )
-    model.resize_token_embeddings(32001)
+def sliding_window_search(context, window_size=1200, step_size=400):
+    context_length = len(context)
+    for start in range(0, context_length, step_size):
+        window = context[start:start+window_size]
+        prompt = window + "\n\nWhat is the passphrase? Output your answer in the format: Final: <code>"
+        output = run_lmstudio_completion(prompt)
+        code = extract_final_code(output)
+        if code == PASSCODE:
+            return True
+    return False
 
-    tokenizer = transformers.AutoTokenizer.from_pretrained(
-        args.base_model,
-        cache_dir=args.cache_dir,
-        model_max_length=args.context_size if args.context_size > orig_ctx_len else orig_ctx_len,
-        padding_side="right",
-        use_fast=False,
-    )
+def read_csv(path):
+    with open(path, newline='', encoding='utf-8') as csvfile:
+        return list(csv.DictReader(csvfile))
 
-    # ---- Load Rows from CSV ----
-    report_lines = []
-    with open(args.csv_file, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f)
-        rows = list(reader)
-        n_tests = len(rows) if args.num_tests is None else min(args.num_tests, len(rows))
-        for i, row in enumerate(rows[:n_tests]):
-            version = row['version']
-            position = row['position']
-            prompt = row['content']
-            pass_key = extract_pass_key(prompt)
-            needle_token_idx = prompt.find(pass_key) if pass_key else -1
-            is_correct, tokens_total, prediction = run_passkey_test_from_csv(model, tokenizer, device, prompt, pass_key)
-            correct = int(is_correct)
-            # Optional: Truncate prompt
-            prompt_short = prompt[:120] + "..." if len(prompt) > 120 else prompt
-            report_line = [
-                version, position, tokens_total, needle_token_idx, prompt_short, prediction, correct
-            ]
-            report_lines.append(report_line)
-            print(f"Test {i+1}: version={version}, position={position}, tokens_total={tokens_total}, correct={correct}")
-
-    # Print CSV header and results
-    print("version,position,tokens_total,needle_token_idx,prompt,prediction,correct")
-    for line in report_lines:
-        print(",".join([str(x) for x in line]))
+def print_summary_table(rows):
+    # Print without prompt, as requested
+    headers = ["version", "position", "tokens_total", "needle_token_idx", "prediction", "correct"]
+    print(",".join(headers))
+    for r in rows:
+        print("{version},{position},{tokens_total},{needle_token_idx},{prediction},{correct}".format(**r))
 
 if __name__ == "__main__":
-    args = parse_config()
-    main(args)
+    rows = read_csv(CSV_PATH)
+
+    table_all = []
+    # Baseline
+    table_all.extend(run_tests(rows, use_sliding_window=False, repeats=REPEATS))
+    # Sliding window
+    table_all.extend(run_tests(rows, use_sliding_window=True, repeats=REPEATS))
+
+    print_summary_table(table_all)

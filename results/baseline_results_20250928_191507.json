@@ -1,0 +1,20 @@
+[
+  {
+    "version": "1",
+    "relative_position": "Start",
+    "accuracy": 1,
+    "context_length": 59256
+  },
+  {
+    "version": "2",
+    "relative_position": "Middle",
+    "accuracy": 1,
+    "context_length": 59255
+  },
+  {
+    "version": "3",
+    "relative_position": "End",
+    "accuracy": 1,
+    "context_length": 59256
+  }
+]

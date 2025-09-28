@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-29T00:02:44.036698",
+    "total_items_processed": 50,
+    "api_url": "http://localhost:1234/v1/chat/completions",
+    "prefix_a": "Answer this question with a yes/no answer only. If unsure, respond as 'unsure'. Answer in one word, yes or no.",
+    "prefix_b": "",
+    "bleu_smoothing": "method4 (epsilon smoothing)",
+    "warnings_suppressed": true
+  },
+  "classification_metrics": {
+    "accuracy": 0.62,
+    "macro_f1": 0.38271604938271603
+  },
+  "text_generation_metrics": {
+    "bleu": 0.03503423205547928,
+    "meteor": 0.3085444966782293,
+    "rouge1": 0.28146420472748757,
+    "rouge2": 0.08031370719983079,
+    "rougeL": 0.18235296929119937
+  },
+  "token_statistics": {
+    "prefix_a": {
+      "mean_tokens": 336.16,
+      "std_tokens": 75.30826249489495,
+      "min_tokens": 160,
+      "max_tokens": 528
+    },
+    "prefix_b": {
+      "mean_tokens": 308.28,
+      "std_tokens": 75.42971297837477,
+      "min_tokens": 132,
+      "max_tokens": 500
+    }
+  }
+}

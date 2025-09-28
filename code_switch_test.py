@@ -14,11 +14,11 @@ RAW_RESULTS_PATH = os.path.join(RESULTS_DIR, "raw_predictions.csv")
 SUMMARY_REPORT_PATH = os.path.join(RESULTS_DIR, "summary_report.txt")
 FILTER_PROMPT = "Instruction: Keep answers precise and respond in words rather than sentences. Return just the answer when possible. Answer in the same language the question was asked. "
 
+LANGUAGE_GUARD = True 
 
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
 def lmstudio_inference(prompt, max_tokens=128):
-    """ Call the LMStudio API for a single prompt and return the output string. """
     payload = {
         "messages": [{"role": "user", "content": FILTER_PROMPT+prompt}],
         "max_tokens": max_tokens,
@@ -32,7 +32,6 @@ def exact_match(pred, gold):
     return int(pred.strip() == gold.strip())
 
 def string_f1(pred, gold):
-    """Token-wise F1 for short answer strings."""
     pred_tokens, gold_tokens = pred.split(), gold.split()
     if not pred_tokens or not gold_tokens:
         return 0.0
@@ -45,7 +44,6 @@ def string_f1(pred, gold):
     return f1
 
 def mean_fluency_rating(pred):
-    """Heuristic fluency scoring 1=bad, 5=flawless (refine for your task)."""
     length = len(pred.split())
     # Very basic heuristic: length penalty for <3 tokens, flawless grammar = 5, else 3-4.
     if length < 3:
@@ -82,6 +80,20 @@ for idx, row in tqdm(df.iterrows(), total=len(df)):
         prompt, gold = row[cond], row[f"{cond}_Answer"]
         if pd.isnull(prompt) or pd.isnull(gold):
             continue
+
+        # additional condition 
+        if LANGUAGE_GUARD:
+            if cond == "L1":
+                prompt += " Answer only in English ; if unsure, say 'unsure'"
+            elif cond == "L2":
+                prompt += " Answer only in Hindi ; if unsure, say 'unsure'"
+            elif cond == "L3":
+                prompt += " Answer only in English ; if unsure, say 'unsure'"
+            elif cond == "CS":
+                prompt += ""
+            else:
+                prompt += ""
+
         prediction = lmstudio_inference(prompt)
         correct = exact_match(prediction, gold)
         f1 = string_f1(prediction, gold)
