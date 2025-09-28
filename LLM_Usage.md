@@ -12,11 +12,13 @@ Perplexity build number: 20994
 
 # Tasks performed (not exhaustive)
 
-- summarise core idea of https://arxiv.org/pdf/2309.12307
-- compare againt using LoRA against RAG for very long content (context)
-- what is position interpolation when scaling context 
-- what are other efficient attention training mechanisms
-- what are Key Limitations of the approach ? 
-- softmax formula for attention 
-- Which techniques alter the architecture of attention layer during inference as a part of the adaption
-- 
+- Section A
+    - summarise core idea of https://arxiv.org/pdf/2309.12307
+    - compare againt using LoRA against RAG for very long content (context)
+    - what is position interpolation when scaling context 
+    - what are other efficient attention training mechanisms
+    - what are Key Limitations of the approach ? 
+    - softmax formula for attention 
+    - Which techniques alter the architecture of attention layer during inference as a part of the adaption
+- Section B
+    - 

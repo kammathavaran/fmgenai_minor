@@ -1,0 +1,11 @@
+Per-condition accuracy, F1, mean fluency, and 95% CI:
+Condition Accuracy    F1 Fluency Mean Fluency 95% CI
+       L1    0.050 0.117         4.30   [3.70, 4.70]
+       L2    0.000 0.003         3.50   [3.20, 4.00]
+       L3    0.000 0.019         4.70   [4.30, 4.90]
+       CS    0.000 0.054         4.00   [3.60, 4.40]
+
+Error type breakdown:
+  Misinterpretation: 78
+  None: 1
+  Terminology drift: 1

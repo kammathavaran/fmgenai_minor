@@ -1,0 +1,5 @@
+condition,accuracy,accuracy_lowCI,accuracy_hiCI,mean_fluency
+L1,1.0,1.0,1.0,
+L2,1.0,1.0,1.0,
+L3,1.0,1.0,1.0,
+CS,1.0,1.0,1.0,

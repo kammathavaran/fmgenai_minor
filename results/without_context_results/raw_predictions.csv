@@ -1,0 +1,168 @@
+id,condition,prompt,gold,prediction,correct,fluency,error_type,f1
+1,L1,"In ""3 Idiots"", which college is shown as the main setting?",Imperial College of Engineering (based on IIT),"The college shown as the main setting in ""3 Idiots"" is the Indian Institute of Technology (IIT) in Delhi.",0,5,Misinterpretation,0.07692307692307693
+1,L2,"""3 इडियट्स"" में मुख्य कॉलेज कौन सा दिखाया गया है?",इम्पीरियल कॉलेज ऑफ़ इंजीनियरिंग,"The main college shown in the movie ""3 Idiots"" is the Indian Institute of Technology (IIT) in Delhi.",0,5,Misinterpretation,0.0
+1,L3,3 Idiots mein main college kaunsa dikhaya gaya hai?,इम्पीरियल कॉलेज ऑफ़ इंजीनियरिंग,"College kaunsa dikhaya gaya hai?
+
+* ""I don't know""
+* ""I'm not sure""
+* ""I can't remember""
+* ""I don't have that information""
+* ""I'm not able to access that information""
+* ""I'm not familiar with that movie""
+* ""I don't have enough context to answer that question""
+* ""I'm not sure what you're asking""
+* ""I can't provide an answer to that question""",0,3,Misinterpretation,0.0
+1,CS,"In ""3 इडियट्स” whats the name of the college ?",Imperial College of Engineering (based on IIT),"The name of the college in ""3 Idiots"" is Imperial College of Engineering.",0,5,Terminology drift,0.3
+2,L1,"Who played the character ""Simran"" in ""Dilwale Dulhania Le Jayenge""?",Kajol,"The character ""Simran"" in ""Dilwale Dulhania Le Jayenge"" was played by actress Kareena Kapoor.",0,5,Misinterpretation,0.0
+2,L2,"""दिलवाले दुल्हनिया ले जायेंगे"" में सिमरन का किरदार किसने निभाया है?",काजोल,"The line ""दिलवाले दुल्हनिया ले जायेंगे"" is from the poem ""Sair-e-Gulfaroshan"" by Mirza Ghalib. The role of Simran in this poem has been played by the poet himself, Mirza Ghalib.",0,5,Misinterpretation,0.0
+2,L3,DDLJ mein Simran ka role kisne kiya hai?,काजोल,Simran ka role in DDLJ mein Kareena Kapoor Khan ne kiya hai.,0,5,Misinterpretation,0.0
+2,CS,DDLJ में सिमरन का किरदार किसने निभाया है?,काजोल,"DDLJ में सिमरन का किरदार निभाया गया है ।
+
+### Explanation:
+
+DDLJ (Dilwale Dulhania Le Jayenge) एक अच्छा फिल्म है, जिसमें शाहरुख खान और काजोल ने मु",0,3,Misinterpretation,0.07142857142857142
+3,L1,In which state is the Kanyakumari cape located?,Tamil Nadu,"The Kanyakumari cape is located in the state of Tamil Nadu, India.",0,5,Misinterpretation,0.14285714285714285
+3,L2,कन्याकुमारी केप किस राज्य में स्थित है?,तमिलनाडु,कन्याकुमारी केप उत्तर प्रदेश में स्थित है।,0,3,Misinterpretation,0.0
+3,L3,Kanyakumari cape kaunsa state mein hai?,तमिलनाडु,"Kanyakumari cape is located in the state of Tamil Nadu, India.",0,5,Misinterpretation,0.0
+3,CS,In which state is the Kanyakumari cape located? हिंदी में उत्तर दें,तमिलनाडु,"Kanyakumari cape is located in Tamil Nadu.  
+
+कन्याकुमारी केप तमिलनाडु में स्थित है।",0,3,Misinterpretation,0.14285714285714288
+4,L1,"If a train leaves Delhi at 10am and reaches Chandigarh at 12pm, how much time did it take?",2 hours,The train took 2 hours to reach Chandigarh from Delhi.,0,5,Misinterpretation,0.33333333333333337
+4,L2,"अगर दिल्ली से ट्रेन 10 बजे छूटती है और चंडीगढ़ 12 बजे पहुँचती है, तो कितना समय लगा?",2 घंटे,"sorry, I don't understand Hindi. Can you please rephrase the question in English or provide more context?",0,3,Misinterpretation,0.0
+4,L3,"Delhi se train 10 baje nikali aur Chandigarh 12 baje pahuncha, kitna time laga?",2 घंटे,"The train left Delhi at 10 AM and reached Chandigarh at 12 PM, so the journey took 2 hours.",0,5,Misinterpretation,0.09523809523809525
+4,CS,"अगर दिल्ली से ट्रेन 10 बजे छूटती है और चंडीगढ़ 12 बजे पहुँचती है, तो कितना समय लगा? Write answer in English",2 hours,"If the train leaves Delhi at 10 AM and reaches Chandigarh at 12 PM, then the journey takes 2 hours.",0,5,Misinterpretation,0.09090909090909091
+5,L1,"""Lagaan"" depicts which sport as central to the plot?",Cricket,Cricket,1,1,None,1.0
+5,L2,"""लगान"" फिल्म की कथा में कौन सा खेल मुख्य है?",क्रिकेट,"The main character in the story of the film ""Lagaan"" is Bhuvan, played by Aamir Khan.",0,5,Misinterpretation,0.0
+5,L3,Lagaan movie mein kaunsa sport main hai?,क्रिकेट,"Cricket.
+
+### Explanation:
+Lagaan is a Bollywood movie released in 2001, set in the late 19th century during the British colonial period in India. The movie's story revolves around cricket, with the main characters being Indian villagers who are challenged by their British rulers to a cricket match. The movie showcases the power of sports in bringing people together and overcoming social barriers.",0,5,Misinterpretation,0.0
+5,CS,"""Lagaan"" movie में central sport कौन सा है? (उत्तर हिंदी में)",क्रिकेट,"The central sport in the movie ""Lagaan"" is cricket.",0,5,Misinterpretation,0.0
+6,L1,Where is the Jaisalmer Golden Fort located?,Rajasthan,"The Jaisalmer Golden Fort is located in the city of Jaisalmer, which is situated in the northwestern Indian state of Rajasthan. The fort is perched on a hill and overlooks the sandy dunes of the Thar Desert. It is one of the largest forts in the world and is known for its stunning architecture and rich history.",0,5,Misinterpretation,0.0
+6,L2,जैसलमेर का गोल्डन किला कहाँ स्थित है?,राजस्थान,"The Golden Temple of Jaisalmer is located in the city of Jaisalmer, which is situated in the Thar Desert in the state of Rajasthan, India. The temple is built on a hill and is one of the most famous tourist attractions in Jaisalmer. It is known for its beautiful architecture and intricate carvings, and is considered a sacred place by Hindus and Jains.",0,5,Misinterpretation,0.0
+6,L3,Jaisalmer Golden Fort kahan hai?,राजस्थान,"Jaisalmer Golden Fort is located in Jaisalmer, Rajasthan, India. It is one of the largest fortifications in the world, built in the 12th century by the Bhati Rajput ruler, Rao Jaisal. The fort is made of yellow sandstone and is known for its intricate carvings and architecture. It is a popular tourist destination and a symbol of Jaisalmer's rich history and culture.",0,5,Misinterpretation,0.0
+6,CS,Where is the Jaisalmer Golden Fort located? (Answer in Hindi),राजस्थान,जैसलमेर गोल्डन फोर्ट राजस्थान के जैसलमेर शहर में स्थित है।,0,3,Misinterpretation,0.18181818181818182
+5,L1,What is the square root of 49?,7,The square root of 49 is 7.,0,5,Misinterpretation,0.0
+5,L2,49 का वर्गमूल क्या है?,7,"49 का वर्गमूल निम्नलिखित है:
+
+49 = 7 × 7
+
+या अन्य रुप में 49 का वर्गमूल निम्न संख्याओं का आधार है:
+
+49 = 13 × 3 + 1
+49 = 12 × 4 + 1",0,3,Misinterpretation,0.05405405405405406
+5,L3,49 ka square root kya hai?,7,49 ka square root 7 hai.,0,5,Misinterpretation,0.2857142857142857
+5,CS,What is the वर्गमूल of 49?,7,The वर्गमूल of 49 is 7.,0,5,Misinterpretation,0.0
+8,L1,"In the movie ""Queen"", which city does Rani visit first?",Paris,Rani visits Paris first.,0,3,Misinterpretation,0.4
+8,L2,"""क्वीन"" फिल्म में रानी सबसे पहले किस शहर जाती है?",पेरिस,"Raani sabse pehle kiske shehar jaati hai?
+
+Well, I'm not sure about that. The movie ""Queen"" is a Bollywood film that tells the story of a Punjabi girl named Rani who goes on a solo honeymoon to Paris after her fiancé calls off their wedding. The movie doesn't show Rani visiting any other city before Paris. So, I'd say she doesn't visit any other city before Paris.
+
+But hey, if you have any more questions or if there's",0,3,Misinterpretation,0.0
+8,L3,Queen film mein Rani sabse pehle kaunsi city visit karti hai?,पेरिस,"Rani ki pehli city visit kaunsi city hai, uske liye yeh question answer nahi diya ja sakta.
+
+### Explanation:
+Yeh question Rani ki pehli city visit ke bare mein hai, lekin iska answer nahi diya ja sakta kyunki Rani ki pehli city visit kaunsi city hai, uske liye yeh information nahi diya gaya hai.",0,5,Misinterpretation,0.0
+8,CS,"""Queen"" movie में Rani सबसे पहले किस city जाती है? (Answer in Hindi)
+",पेरिस,"Rani सबसे पहले किस city जाती है?
+
+मुझे याद नहीं आया कि Rani किस city जाती है। मैं इस प्रश्न का जवाब नहीं दे सकता।",0,3,Misinterpretation,0.0
+12,L1,"If you eat a healthy breakfast, how does it help you?",Provides energy/Improves concentration,"Eating a healthy breakfast has several benefits. Firstly, it helps to jumpstart your metabolism, which can help you burn calories throughout the day. Secondly, it provides energy and endurance to get through the day, especially for those with busy schedules. Additionally, eating a nutritious breakfast has been linked to improved cognitive function, better mood, and reduced stress levels. It also helps to support a healthy weight and can even aid in weight loss efforts. Furthermore, starting your day with a balanced breakfast can help you maintain healthy blood sugar levels and reduce the risk of chron",0,3,Misinterpretation,0.0
+12,L2,अगर आप पौष्टिक नाश्ता करते हैं तो यह किस प्रकार मदद करता है?,"ऊर्जा देता है, सेहत के लिए अच्छा है","आप पौष्टिक नाश्ता करते हैं, तो यह किस प्�ार मदद करता है:
+
+1. आप खुद को एक नौका में बिठा ले जाते हैं, जहां से आप अपनी न",0,3,Misinterpretation,0.0
+12,L3,Healthy breakfast kaise madad karta hai?,"ऊर्जा देता है, सेहत के लिए अच्छा है","Breakfast is considered the most important meal of the day, as it helps to recharge your body's batteries after an overnight fast. A healthy breakfast can provide numerous benefits, including:
+
+1. Boosting metabolism: Eating a nutritious breakfast can help kickstart your metabolism, which can help you burn calories throughout the day.
+2. Improving concentration and focus: A healthy breakfast has been shown to improve cognitive function, memory, and mood, making it easier to concentrate and stay focused throughout the day.
+3.",0,5,Misinterpretation,0.0
+12,CS,"If you eat a healthy breakfast, how does it help you? (उत्तर Hindi में)",ऊर्जा प्रदान करता है/एकाग्रता में सुधार करता है,"Eating a healthy breakfast has several benefits. It helps to:
+
+1. Boost energy levels: A nutritious breakfast provides the energy needed to start the day, helping to improve concentration and productivity.
+2. Support weight management: Eating a healthy breakfast has been shown to help with weight management by curbing hunger and preventing overeating later in the day.
+3. Improve mental performance: A healthy breakfast has been linked to improved cognitive function, memory, and mood.
+4. Support heart health: Eating a breakfast that is low in s",0,3,Misinterpretation,0.0
+10,L1,The Puri Rath Yatra is held in which state?,Odisha,"The Puri Rath Yatra is held in the state of Odisha, India.",0,5,Misinterpretation,0.0
+10,L2,पुरी रथ यात्रा किस राज्य में होती है?,ओडिशा,"The Puri Rath Yatra takes place in the state of Odisha, India. It is one of the most famous and important Hindu festivals, and it is celebrated every year in the city of Puri, which is located on the eastern coast of Odisha. The festival is dedicated to Lord Jagannath, a form of Lord Vishnu, and it involves the procession of three large chariots carrying the deities of Lord Jagannath, his sister Subhadra, and his brother Balabhadra. The festival attracts millions of devotees and tourists from all over",0,3,Misinterpretation,0.0
+10,L3,Puri Rath Yatra kaunsa state mein hai?,ओडिशा,"Puri Rath Yatra is celebrated in the state of Odisha, India.",0,5,Misinterpretation,0.0
+10,CS,Puri Rath Yatra किस state में होती है? (Answer in English),Odisha,"Puri Rath Yatra takes place in the state of Odisha, India.",0,5,Misinterpretation,0.0
+11,L1,In which state is the Dudhsagar Waterfall located?,Goa,"The Dudhsagar Waterfall is located in the state of Goa, India.",0,5,Misinterpretation,0.0
+11,L2,दूधसागर जलप्रपात किस राज्य में है?,गोवा,दूधसागर जलप्रपात उत्तर पश्चिम राज्य में है।,0,3,Misinterpretation,0.0
+11,L3,Dudhsagar waterfall kaunsa state mein hai?,गोवा,"Dudhsagar waterfall is located in the state of Goa, India.",0,5,Misinterpretation,0.0
+11,CS,Dudhsagar waterfall is in which state? (उत्तर हिंदी में),गोवा,"Dudhsagar waterfall is located in the state of Goa, India.",0,5,Misinterpretation,0.0
+20,L1,Give a brief instruction for sending an email.,"Open mail, compose, type, send.","To send an email, follow these steps:
+
+1. Open your email client or log in to your email account online.
+2. Click on the ""Compose"" or ""New Email"" button to start a new email.
+3. Enter the recipient's email address in the ""To"" field.
+4. Write a subject line for your email in the ""Subject"" field.
+5. Type your message in the main body of the email.
+6. If you want to add an attachment, click on the ""Attach"" button and select the file you want to attach.
+7",0,3,Misinterpretation,0.02127659574468085
+20,L2,ईमेल भेजने की संक्षिप्त प्रक्रिया बताएं।,"मेल ऐप खोलें, नया मेल लिखें, पता डालें, भेजें","ईमेल भेजने की संक्षिप्त प्रक्रिया निम्न है:
+
+1. ईमेल करने का उद्देश्य स्पष्ट करें। ईमेल करने की स्वार्थ का उद्देश्य",0,3,Misinterpretation,0.0
+20,L3,Email bhejne ki brief procedure batao.,"मेल ऐप खोलें, नया मेल लिखें, पता डालें, भेजें","Sure, here's a brief procedure for conducting an email campaign:
+
+1. Define your target audience: Identify the group of people you want to reach through your email campaign. This could be existing customers, potential customers, or a specific segment of your audience.
+2. Set a clear objective: Determine what you want to achieve with your email campaign. Do you want to increase sales, generate leads, or simply build brand awareness? Having a clear objective will help guide the rest of your campaign.
+3. Create a compelling subject line and email content: Your subject line should",0,3,Misinterpretation,0.0
+20,CS,Briefly tell how to send an email. (उत्तर Hindi में),"मेल खोलें, लिखें, टाइप करें, भेजें।","To send an email, follow these steps:
+
+1. Open your email client or log in to your email account on a web-based service like Gmail, Yahoo, or Outlook.
+2. Click on the ""Compose"" or ""New Email"" button to start a new email.
+3. Enter the recipient's email address in the ""To"" field.
+4. Write a subject line for your email in the ""Subject"" field.
+5. Type your message in the main body of the email.
+6. If you want to add an attachment, click on the",0,3,Misinterpretation,0.0
+13,L1,The “Jallikattu” is a famous traditional event in which state?,Tamil Nadu,"The ""Jallikattu"" is a famous traditional event in Tamil Nadu, India. It is a bull-taming sport that takes place during the Pongal festival and is an integral part of Tamil culture.",0,5,Misinterpretation,0.06060606060606061
+13,L2,"""जल्लिकट्टु"" किस राज्य का प्रसिद्ध पारंपरिक आयोजन है?",तमिलनाडु,"""जल्लिकट्टु"" उत्तर प्रदेश का प्रसिद्ध पारंपरिक आयोजन है।",0,3,Misinterpretation,0.0
+13,L3,Jallikattu event kaunsa state ka hai?,तमिलनाडु,Jallikattu is a traditional festival celebrated in the Indian state of Tamil Nadu.,0,5,Misinterpretation,0.0
+13,CS,"""जल्लिकट्टु"" इवेंट किस राज्य में बोहत फेमस है? (Answer in English)",Tamil Nadu,"The ""Jallikattu"" event is most popular in the state of Tamil Nadu, India.",0,5,Misinterpretation,0.13333333333333336
+14,L1,"Where in India is the ancient Sun Temple located, famous for its chariot-shaped structure?","Konark, Odisha","The ancient Sun Temple is located in Konark, Odisha, India. It is famous for its chariot-shaped structure and is considered one of the most iconic temples in India. The temple was built in the 13th century by King Narasimhadeva I of the Eastern Ganga dynasty and is a UNESCO World Heritage Site.",0,5,Misinterpretation,0.037037037037037035
+14,L2,"भारत में प्राचीन सूर्य मंदिर, जो रथ जैसी आकृति के लिए प्रसिद्ध है, कहाँ है?","कोणार्क, ओडिशा","भारत में प्राचीन सूर्य मंदिर कई हैं, जो रथ जैसी आकृति के लिए प्रसिद्ध हैं। उनमें सबसे अच्छा है, या सबसे ज्यादा प्रसिद",0,3,Misinterpretation,0.0
+14,L3,"Sun Temple, chariot shape, kaunsa jagah par hai?","कोणार्क, ओडिशा","Sun Temple, Konark, Odisha, India.
+
+### Explanation:
+The Sun Temple in Konark, Odisha, India is a famous temple dedicated to the Hindu sun god Surya. It is known for its unique chariot-shaped architecture and is considered one of the most impressive temples in India. The temple was built in the 13th century by King Narasimhadeva I of the Eastern Ganga dynasty and is a UNESCO World Heritage Site.",0,5,Misinterpretation,0.0
+14,CS,"Where in India is the ancient सूर्य मंदिर,, famous for its chariot shape?","Konark, Odisha","The ancient सूर्य मंदिर, famous for its chariot shape, is located in Konark, Odisha, India. It is a 13th-century temple dedicated to the Hindu sun god Surya and is known for its unique architecture that resembles a chariot, with wheels and horses carved on the sides. The temple is a UNESCO World Heritage Site and is considered one of the most iconic landmarks in India.",0,5,Misinterpretation,0.029850746268656723
+15,L1,"Which Bollywood movie features the character ""Babu Bhaiya""?",Hera Pheri,"The character ""Babu Bhaiya"" is featured in the Bollywood movie ""Maine Pyar Kiya.""",0,3,Misinterpretation,0.0
+15,L2,"किस बॉलीवुड फिल्म में ""बाबू भाईया"" का किरदार है?",हेरा फेरी,"The character of ""Babu Bhaiyya"" is played by actor Nawazuddin Siddiqui in the Bollywood film ""Bajrangi Bhaijaan"".",0,5,Misinterpretation,0.0
+15,L3,Kaunsi Bollywood film mein Babu Bhaiya character hai?,हेरा फेरी,"Babu Bhaiya is a character in the Bollywood film ""Munna Bhai M.B.B.S."" played by actor Sanjay Dutt.",0,5,Misinterpretation,0.0
+15,CS,"Which Bollywood movie features the character ""बाबू भाईया""? ",Hera Pheri,"The character ""बाबू भाईया"" is featured in the Bollywood movie ""Maine Pyar Kiya"".",0,5,Misinterpretation,0.0
+8,L1,"Who is called the ""Missile Man of India""?",Dr. A.P.J. Abdul Kalam,"The ""Missile Man of India"" is Dr. A.P.J. Abdul Kalam. He was a renowned scientist and engineer who played a significant role in the development of India's missile program, including the Agni and Prithvi missiles. He served as the 11th President of India from 2002 to 2007 and is known for his contributions to the field of science and technology in India.",0,5,Misinterpretation,0.0909090909090909
+8,L2,भारत के मिसाइल मैन किसे कहते हैं?,डॉ. ए.पी.जे. अब्दुल कलाम,"भारत के मिसाइल मैन किसे कहते हैं?
+
+This is a trick question, as the term ""मिसाइल"" (Misail) is not a word in Hindi or any other language. Therefore, it is not possible to provide an answer to this question.
+
+However, I must commend you for your creativity in coming up with such a unique and humorous question. It's always a pleasure to engage in light-hearted",0,3,Misinterpretation,0.0
+8,L3,Missile Man of India kisko kehte hain?,डॉ. ए.पी.जे. अब्दुल कलाम,"Missile Man of India refers to Dr. A.P.J. Abdul Kalam, who was a renowned Indian scientist and engineer known for his contributions to the development of India's missile technology. He played a key role in the development of several missiles, including the Agni and Prithvi missiles, and was also instrumental in the development of India's space program. Dr. Kalam served as the President of India from 2002 to 2007 and is widely regarded as one of the most influential figures in modern Indian history.",0,5,Misinterpretation,0.0
+8,CS,"Who is called the ""Missile Man of India""? (Answer in Hindi)",डॉ. ए.पी.जे. अब्दुल कलाम,"इंडिया के लिए मिसाइल मैन कहलाता हैं, डॉ. अपजीत  Kalam ।",0,3,Misinterpretation,0.13333333333333333
+17,L1,"In ""Andaz Apna Apna"", who is ""Crime Master Gogo""?",Shakti Kapoor,"Crime Master Gogo is a fictional character in the movie ""Andaz Apna Apna"". He is a notorious criminal who is known for his cleverness and cunning ways. He is played by actor Shakti Kapoor in the film.",0,5,Misinterpretation,0.10256410256410257
+17,L2,"""अंदाज़ अपना अपना"" में 'क्राइम मास्टर गोगो' कौन है?",शक्ति कपूर,"'क्राइम मास्टर गोगो' किसी व्यक्ति के नाम नहीं है, बल्कि यह एक अनुकरण है, जिसे दर्शान करने के लिए आप का समर्थन करते हैं।",0,3,Misinterpretation,0.0
+17,L3,Andaz Apna Apna mein Crime Master Gogo kaun hai?,शक्ति कपूर,"Crime Master Gogo is a character from the movie ""Andaz Apna Apna."" He is a notorious criminal who is known for his cleverness and cunning ways. He is played by actor Shakti Kapoor in the film.",0,5,Misinterpretation,0.0
+17,CS,"""Andaz Apna Apna"" में Crime Master Gogo कौन है? (Answer in English)
+",Shakti Kapoor,"Crime Master Gogo is a character played by actor Aamir Khan in the movie ""Andaz Apna Apna.""",0,3,Misinterpretation,0.0
+18,L1,"Where in India is the Vembanad Lake, the longest lake in the country, located?",Kerala,"The Vembanad Lake, also known as the Vembanad Kayal, is located in the state of Kerala in southwestern India. It is situated approximately 10 kilometers from the city of Kottayam and stretches for over 90 kilometers, making it the longest lake in India. The lake is a popular tourist destination known for its scenic beauty and diverse wildlife, including numerous species of birds, fish, and other aquatic organisms.",0,5,Misinterpretation,0.028985507246376812
+18,L2,"भारत की सबसे लंबी झील, वेम्बनाड झील, किस राज्य में है?",केरल,"भारत की सबसे लंबी झील, वेम्बनाड झील, कर्नाटका राज्य में है।",0,3,Misinterpretation,0.0
+18,L3,"Vembanad lake, sabse lambi jheel, kaunsa state mein hai?",केरल,"Vembanad Lake is located in the state of Kerala, India. It is the longest lake in India and the largest lake in Kerala, stretching over 90 km in length. It is a popular tourist destination known for its scenic beauty and diverse wildlife.",0,5,Misinterpretation,0.0
+18,CS,"इंडिया की सबसे लंबी झील, वेम्बनाड झील, कहाँ है? (Answer in English)",Kerala,"The longest lake in India is the Wular Lake, located in Jammu and Kashmir. It is approximately 16 km long and 2 km wide.",0,5,Misinterpretation,0.0
+9,L1,Reason: Why do we see our reflection in a mirror?,Light bounces off surface (reflection),"We see our reflection in a mirror because of the way light behaves. When light hits an object, it bounces off in all directions. When some of that light hits a mirror, it bounces back to our eyes, allowing us to see the image of the object. The mirror acts as a reflective surface, allowing us to see ourselves because it is flat and smooth, which helps to create a clear reflection.
+
+Additionally, the law of physics, such as the law of reflection, also plays a role in why we can see our reflection in a mirror. This law states that the angle of inc",0,3,Misinterpretation,0.03636363636363637
+9,L2,कारण बताएं: हम आइने में अपना प्रतिबिम्ब क्यों देखते हैं?,प्रकाश परावर्तित होता है,"There are several reasons why we see our reflection in a mirror. Here are some possible explanations:
+
+1. Light Reflection: When light rays from an object fall on a mirror, they get reflected back to the viewer, creating an image of the object. This is known as specular reflection. The mirror acts as a reflective surface, allowing us to see our reflection.
+2. Mirror Symmetry: Another reason we can see our reflection in a mirror is due to the symmetry of the mirror itself. When light rays pass through the mirror, they are reflected back in a symmetrical",0,3,Misinterpretation,0.0
+9,L3,Mirror mein reflection kyun dikhta hai?,प्रकाश परावर्तित होता है,"Mirror mein reflection dikhta hai because of the way that light interacts with the mirror's surface. When light hits the mirror, it bounces back at the same angle that it hit the mirror, creating a reflection of the object or person in front of the mirror. This is known as specular reflection.
+
+The reason we see a reflection in a mirror and not just a blank surface is because the mirror's surface is made up of tiny, flat molecules that are arranged in a regular pattern. When light hits the mirror, it hits these molecules and bounces",0,3,Misinterpretation,0.0
+9,CS,Why do we see our reflection in a mirror? (उत्तर हिंदी में),प्रकाश सतह से टकराता है (परावर्तन),"We see our reflection in a mirror because of the way light behaves. When light bounces off an object, it travels in all directions. When some of that light hits a flat surface like a mirror, it bounces back to our eyes, allowing us to see the image of the object. This is known as reflection.
+
+The law of reflection states that the angle of incidence equals the angle of reflection. This means that if light hits a surface at a 45-degree angle, it will bounce back at a 45-degree angle. This allows us to see",0,3,Misinterpretation,0.0
+20,L1,In which state is the Valley of Flowers National Park located?,Uttarakhand,"The Valley of Flowers National Park is located in the state of Uttarakhand, India.",0,5,Misinterpretation,0.0
+20,L2,वैली ऑफ फ्लावर्स नेशनल पार्क किस राज्य में स्थित है?,उत्तराखंड,वैली ऑफ फ्लावर्स नेशनल पार्क केरल राज्य में स्थित है।,0,3,Misinterpretation,0.0
+20,L3,Valley of Flowers National Park kaunsa state mein hai?,उत्तराखंड,Valley of Flowers National Park Uttarakhand state mein hai.,0,5,Misinterpretation,0.0
+20,CS,Valley of Flowers National Park is in which state? (Answer in Hindi),उत्तराखंड,"Valley of Flowers राष्ट्रीय उद्यान किस राज्य में है?
+
+(Hindi mein jawab dene ke liye kripya karigar ki madad ke saath, ""Uttarakhand"" ka answer dene ki koshish karein.)",0,3,Misinterpretation,0.0
